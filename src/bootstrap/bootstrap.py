@@ -755,6 +755,7 @@ class RustBuild(object):
             env["RUSTFLAGS"] += " -C target-feature=" + (",".join(target_features))
         env["RUSTFLAGS"] += " -Wrust_2018_idioms -Wunused_lifetimes"
         env["RUSTFLAGS"] += " -Wsemicolon_in_expressions_from_macros"
+        env["RUSTFLAGS"] += " -Welided_lifetimes_in_paths"
         if self.get_toml("deny-warnings", "rust") != "false":
             env["RUSTFLAGS"] += " -Dwarnings"
 
